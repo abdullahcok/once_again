@@ -1,0 +1,49 @@
+@import "../mixins";
+@import "../colors";
+
+* {
+	@include sizing();
+
+	&::before {
+		@include sizing();
+	}
+	&::after {
+		@include sizing();
+	}
+}
+html {
+	font-family: 'Roboto', sans-serif;
+	font-size: 10px;
+}
+body {
+	width: 100%;
+	height: 100vh;
+	@include display();
+	background: $dblue;
+}
+.button {
+	text-decoration: none;
+	color: #62DB56;
+	border: 2px solid $green;
+	padding: 2rem 4rem;
+	font-size: 2.5rem;
+	position: relative;
+	transition: all 2s;
+	&::before {
+		@include content();
+	}
+	&::after {
+		@include content();
+	}
+	&:hover {
+		&::before {
+			@include hover();
+		}
+		&::after {
+		  @include hover();
+		}
+		color: $dblue;
+		background: $green;
+		border-color: $green;
+	}
+}

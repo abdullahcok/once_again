@@ -1,0 +1,77 @@
+@import "../mixins";
+@import "../colors";
+
+*{
+  @include sizing();
+  font-family: "Noto Sans", sans-serif;
+}
+body{
+  @include display();
+  min-height: 100vh;
+}
+.container{
+  position: relative;
+  @include display();
+  flex-wrap: wrap;
+  &:hover{
+    .content{
+      opacity: 1;
+    }
+  }
+}
+.hex{
+  position: relative;
+  width: 340px;
+  height: 340px;
+  margin: 50px 20px;
+  &::before{
+    content:'';
+    position: absolute;
+    bottom: -70px;
+    width: 100%;
+    height: 60px;
+    background: radial-gradient(rgba(100, 200, 200, 0.5), transparent,transparent);
+    border-radius: 50%;
+		transition: .5s;
+  }
+  &:hover{
+    &::before{
+      opacity: .7;
+      transform: scale(.8);
+    }
+    .shape{
+      transform: translateY(-30px);
+    }
+  }
+}
+
+.shape{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $dgray;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  transition: .5s;
+}
+img{
+  width: 100%;
+  height: 100%;
+  object-fit: fit;
+}
+.content{
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  text-align:center;
+  @include display();
+  color: #fff;
+  background: linear-gradient(45deg, #00BFE5, rgba(255, 250, 250, 0.1));
+  opacity: 0;
+  transition: .5s;
+  font-weight: bold;
+}

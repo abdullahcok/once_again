@@ -1,0 +1,78 @@
+@import "../mixins";
+@import "../colors";
+
+*{
+  @include sizing();
+  font-family: "Noto Sans", sans-serif;
+}
+
+body{
+  @include display();
+  min-height: 50vh;
+  background: #fff;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.container{
+  position: relative;
+  @include display();
+  max-width: 100%;
+  z-index:1;
+
+  .card{
+    position: relative;
+    width: 390px;
+    height: 200px;
+    margin: 5px;
+    padding: 5px 10px;
+    box-shadow: 20px 10px 20px rgba(0,0,0,.9);
+    border-radius: 15px;
+    background: rgba(1,1,1,.5);
+    color: $lgray;
+    overflow: hidden;
+    border-top: 1px rgba(0,0,0,.5);
+    border-radius: 10px;
+    background: rgba(0,0,0,.8);
+    backdrop-filter: blur(5px);
+
+  }
+
+  .content {
+  	transition: 0.5s;
+  	transform: translateY(20px);
+  	opacity: 1;
+
+    h2 {
+    	position: absolute;
+    	font-size: 5rem;
+    	color: rgba(255,255,255,.1);
+    	pointer-events: none;
+    }
+    .c-no, .valid {
+      @include display();
+    	z-index: 1;
+    }
+    .c-no{
+      padding: 10px 0;
+    }
+    .name{
+      padding: 15px 5px
+      ;
+    }
+    .sign, .cvv{
+      @include display();
+      padding: 20px;
+    }
+    .sign-area{
+      @include display();
+      width: 350px;
+      height: 20px;
+      background: #fff;
+    }
+  }
+}

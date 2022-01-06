@@ -1,0 +1,41 @@
+@import "../mixins";
+@import "../colors";
+
+@keyframes rotate {
+  8%{
+    transform: scale(1) rotate(360deg);
+  }
+  50%{
+    transform: scale(.8) rotate(-360deg);
+  }
+  100%{
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+*{
+  @include sizing();
+}
+html{
+  font-size: 10px;
+}
+body{
+  background: $dgray;
+}
+.spinner{
+  width: 5rem;
+  height: 5rem;
+  position: absolute;
+  top: 50%;
+  left: 48%;
+  transition: translate(-50%, -50%);
+}
+.spinner-inner{
+  width: 100%;
+  height: 100%;
+  border: .5rem solid $dgray;
+  border-radius: 50%;
+  border-top-color: $green;
+  border-bottom-color: $blue;
+  animation: rotate 10s linear infinite;
+}

@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+html section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: #1a1a1a;
+}
+
+html .container {
+  max-width: 98rem;
+  padding: 1.5rem;
+}
+
+html .container .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-gap: .5rem;
+}
+
+html .container .cards .card {
+  background-color: #1d1d1d;
+  color: #fff;
+  padding: 2.5rem;
+  letter-spacing: .15rem;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+html .container .cards .card:hover .card-title-large {
+  transform: translateX(5%);
+  color: #fff;
+}
+
+html .container .cards .card-title-large {
+  font-family: fantasy;
+  font-size: 3.6em;
+  letter-spacing: .3rem;
+  color: #3d3d3d;
+  transform: translateX(-1rem);
+  transition: transform 1s;
+}
+
+html .container .cards .card-title-small {
+  font-size: 2.1rem;
+  color: #8c8c8c;
+}
+
+html .container .cards .card-description {
+  font-size: 1.2rem;
+}
+
+html .container .cards .card-cta {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: #fff;
+  margin: 1rem 0;
+  align-self: flex-end;
+  font-weight: bold;
+}
+
+html .container .cards .card.github:hover {
+  background-image: radial-gradient(at 20% 120%, #8c8c8c 20%, #3d3d3d 68%, #1a1a1a 98%);
+}
+
+html .container .cards .card.linkedin:hover {
+  background-image: radial-gradient(at 20% 120%, #272838 20%, #197bad 68%, #94d6f7 98%);
+}
+
+html .container .cards .card.twitter:hover {
+  background-image: radial-gradient(at 20% 120%, #94d6f7 20%, #272838 68%, #197bad 98%);
+}
+
+html .container .cards .card.instagram:hover {
+  background-image: radial-gradient(at 20% 120%, #197bad 20%, #e23467 68%, #ac2bb3 98%);
+}

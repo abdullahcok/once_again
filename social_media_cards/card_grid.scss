@@ -1,0 +1,93 @@
+@import "../mixins";
+@import "../colors";
+
+*{
+  @include sizing();
+  align-items: center;
+}
+html{
+  font-size: 62.5%;
+
+  section{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-color: $dgray;
+  }
+
+  .container{
+    max-width: 98rem;
+    padding: 1.5rem;
+
+    .cards{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+      grid-gap: .5rem;
+
+      .card{
+        background-color: $gray;
+        color: #fff;
+        padding: 2.5rem;
+        letter-spacing: .15rem;
+        flex-direction: column;
+        border-radius: 10px;
+        &:hover{
+          .card-title-large{
+            transform: translateX(5%);
+            color: #fff;
+          }
+        }
+      }
+
+      .card-title-large{
+        font-family: fantasy;
+      	font-size: 3.6em;
+      	letter-spacing: .3rem;
+      	color: $ngray;
+      	transform: translateX(-1rem);
+      	transition: transform 1s;
+      }
+      .card-title-small{
+        font-size: 2.1rem;
+        color: $lgray;
+      }
+      .card-description{
+        font-size: 1.2rem;
+      }
+      .card-cta{
+        display: inline-block;
+      	text-decoration: none;
+      	font-size: 1.1rem;
+      	color: #fff;
+      	margin: 1rem 0;
+      	align-self: flex-end;
+      	font-weight: bold;
+      }
+
+      .card.github{
+        &:hover {
+        background-image: radial-gradient(at 20% 120%, $lgray 20%, $ngray 68%, $dgray 98%);
+        }
+      }
+
+      .card.linkedin{
+        &:hover {
+        background-image: radial-gradient(at 20% 120%, $dblue 20%, $blue 68%, $lblue 98%);
+        }
+      }
+
+      .card.twitter{
+        &:hover {
+        background-image: radial-gradient(at 20% 120%, $lblue 20%, $dblue 68%, $blue 98%);
+        }
+      }
+
+      .card.instagram{
+        &:hover {
+        background-image: radial-gradient(at 20% 120%, $blue 20%, #e23467 68%, #ac2bb3 98%);
+        }
+      }
+
+    }
+  }
+}

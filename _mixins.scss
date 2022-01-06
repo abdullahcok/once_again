@@ -1,0 +1,31 @@
+@import "colors";
+
+@mixin sizing{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@mixin content{
+  content: "";
+		position: absolute;
+		width: 4rem;
+		height: 4rem;
+		border: solid $green;
+		transition: all 2s;
+		top: -1.5rem;
+		left: -1.5rem;
+		border-width: 2px 0 0 2px;
+}
+
+@mixin display{
+  display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@mixin hover{
+  width: calc(100% + 1rem);
+	height: calc(100% + 3rem);
+	border-color: $dblue;
+}
